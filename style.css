@@ -11,7 +11,7 @@ h1{
   text-align: center;
   font-size: 40px;
 }
-.namei{
+.namei, .nameit{
   text-align: center;
  font-size: 30px;
 }
@@ -21,4 +21,116 @@ h1{
   text-align: center;
   font-size: 30px;
   background: cyan;
+}
+
+.mulai-tes{
+  display: block;
+  margin-top: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 30px;
+  background: red;
+  opacity: 0.7;
+}
+.gas-tes{
+  display: none;
+  margin-top: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 30px;
+  background: red;
+  opacity: 0.7;
+}
+
+.pilihan-tes{
+  display: none;
+  margin-top: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.7;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 30px;
+  align-items: center;
+}
+.itemt{
+  background-color: red;
+  padding: 10px 10px;
+  height: 45px;
+  border-radius: 20px;
+  border: 1px solid cyan;
+  font-size: 20px;
+}
+.solo{
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  margin: 50px 75px;
+  align-items: center;
+}
+.fnama{
+  border-radius: 20px;
+  width: 70%;
+  height: 30px;
+  padding-left: 5px;
+}
+.duo{
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  margin: 50px 75px;
+  align-items: center;
+}
+
+.skor{
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  align-items: center;
+}
+
+.cek{
+  display: none;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 15px;
+  flex-direction: column;
+  opacity: 0.7;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 30px;
+  align-items: center;
+}
+
+.salah-tes {
+  margin-top: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 30px;
+  background: red;
+  opacity: 0.7;
+  width: 50%;
+}
+
+.benar-tes {
+  margin-top: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 30px;
+  background: greenyellow;
+  opacity: 0.7;
+  width: 50%;
+}
+
+.skor:nth-child(2n+1){
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#timer{
+  text-align: center;
+  font-size: 30px;
 }
