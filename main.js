@@ -9,33 +9,85 @@ for(let i=0;i<2000;i++){
 }
 
 
-let yy = ['ionA','ionK']
-let xx = ['namaA', 'namaK']
-let zz = ['n','i']
+let yy = ['ionA','ionK'];
+let xx = ['namaA', 'namaK'];
+let zz = ['n','i'];
+let ion = document.querySelector('.ion');
+let tuviw = 'on';
+
+function valueout(i) {
+  ion.innerHTML = i;
+}
+
 
 function outtest(x,y, z,xx,yy, zz){
   if(zz[z] == 'n'){
-    document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
+    let nam = anionkation[yy[y]][x];
+    let rum = anionkation[xx[y]][x];
+    let indi = 0;
     
+    function re(){
+        if (indi == 0) {
+          document.querySelector('.ion').innerHTML = rum;
+          indi = 1;
+        } else if (indi == 1) {
+          document.querySelector('.ion').innerHTML = nam;
+          indi = 0;
+        }
+    }
     
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
-    })
+    document.querySelector('.ion').innerHTML = nam; 
+    
+    if(tuviw == 'on'){
+      document.querySelector('.ion').addEventListener('click', re)
+    }else if(tuviw == 'off'){
+      null
+    }
   }
   else if(zz[z]=='i'){
-    document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
+    let nam = anionkation[yy[y]][x];
+    let rum = anionkation[xx[y]][x];
+    let indi = 0;
     
+    function re() {
+      if (indi == 0) {
+        document.querySelector('.ion').innerHTML = nam;
+        indi = 1
+      } else if (indi == 1) {
+        document.querySelector('.ion').innerHTML = rum;
+        indi = 0;
+      }
+    }
     
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
-    })
+    document.querySelector('.ion').innerHTML = rum;
+    
+    if (tuviw == 'on') {
+      document.querySelector('.ion').addEventListener('click', re)
+    } else if (tuviw == 'off') {
+      null
+    }
   }else{
-    document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
+    let nam = anionkation[yy[y]][x];
+    let rum = anionkation[xx[y]][x];
+    let indi = 0;
     
+    function re() {
+      if (indi == 0) {
+        document.querySelector('.ion').innerHTML = rum;
+        indi = 1
+      } else if (indi == 1) {
+        document.querySelector('.ion').innerHTML = nam;
+        indi = 0;
+      }
+    }
     
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
-    })
+    document.querySelector('.ion').innerHTML = nam;
+    
+    if (tuviw == 'on') {
+      document.querySelector('.ion').addEventListener('click', re)
+    } else if (tuviw == 'off') {
+      null
+    }
   }
 }
 
@@ -45,13 +97,15 @@ outtest(x[iganti],y[iganti], z[iganti],xx,yy, zz)
 
 let ganti = document.querySelector('.reload');
 
-ganti.addEventListener('click',()=>{
-  if(iganti == 2000){
+function gantiv(){
+  if(iganti == 2000) {
     location.reload()
   }
-  outtest(x[iganti],y[iganti], z[iganti],xx,yy,zz,z)
+  outtest(x[iganti], y[iganti], z[iganti], xx, yy, zz, z)
   iganti += 1
-})
+}
+
+ganti.addEventListener('click', gantiv);
 
 
 let mulaites = document.querySelector('.mulai-tes');
@@ -94,6 +148,7 @@ function inputtes(x){
 
 
 function gastes(){
+  tuviw ='off';
   if(xip == 1){
     let namas = document.querySelector('#namas').value
     
@@ -139,7 +194,8 @@ function gastes(){
   
 }
 
-var wak, wak2;
+var wak;
+var wak2;
 
 function benartes(){
   clearTimeout(wak2);
@@ -180,10 +236,11 @@ function countdown(ig) {
             counter.style.display = 'none';
           }else if(seconds == -1){
             cek.style.display = 'flex';
-            wak2 = setTimeout(salahtes, 2000);
+            wak2 = setTimeout(salahtes, 2000)
           }
         }
         tick();
+        
       }
 
 function lanjuttes(){
