@@ -158,7 +158,7 @@ function salahtes(){
 
 
 function countdown(ig) {
-        var seconds = 3;
+        var seconds = 6;
         function tick() {
           let counter = document.getElementById("timer");
           seconds--;
