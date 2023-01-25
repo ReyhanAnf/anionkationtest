@@ -9,33 +9,6 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-    font-size: 15pt;
-}
-.wrap{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-}
-h1{
-  text-align: center;
-  font-size: 40px;
-}
-.namei{
-  text-align: center;
- font-size: 30px;
-}
-.reload{
-  margin-top: 100px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 30px;
-  background: cyan;
-}
-
-  </style>
 </head>
 
 <body>
@@ -51,251 +24,58 @@ h1{
   <div class="reload">
     Ganti
   </div>
+    <div class="tes">
+      <div class="mulai-tes">
+        Tes
+      </div>
+      <div class="pilihan-tes">
+        <div class='itemt' onclick="inputtes(1)">sendiri</div>
+        <div class='itemt' onclick="inputtes(2)">2 orang </div>
+      </div>
+      
+      <div class="inputnama">
+        <div class="solo">
+          <label for="namas">nama</label>
+          <input type="text" id="namas" class="fnama">
+        </div>
+        <div class="duo">
+          <label for="nama1">player 1</label>
+          <input type="text" id="nama1" class="fnama">
+          <label for="nama2">player 2</label>
+          <input type="text" id="nama2" class="fnama">
+        </div>
+      </div>
+      
+      <div class="gas-tes" onclick="gastes()">
+        Gas
+      </div>
+      
+      
+      <div class="skor">
+        
+      </div>
+      
+      
+<div class="nameit">
+
+</div>
+      
+<div class="cek">
+    <div class="benar-tes" onclick="benartes()">
+      Benar
+    </div>
+    <div class="salah-tes" onclick="salahtes()">
+      Salah
+    </div>
+</div>
+      
+      <div id="timer">
+        
+      </div>
+    </div>
+    
   <!-- Project -->
-  <script >
-  const anionkation = {
-    ionA: [
-        "H⁻",
-        "F⁻",
-        "CI⁻",
-        "Br⁻",
-        "I⁻",
-        "OH⁻",
-        "CN⁻",
-        "SCN⁻",
-        "HCOO⁻",
-        "CH3COO⁻",
-        "O²⁻",
-        "S²⁻",
-        "N³⁻",
-        "NO₂⁻",
-        "NO₃⁻",
-        "ClO⁻",
-        "CIO₂⁻",
-        "CIO₃⁻",
-        "ClO₄⁻",
-        "MnO₄⁻",
-        "MnO₄²⁻",
-        "SO₃²⁻",
-        "SO₄²⁻",
-        "S₂O₃²⁻",
-        "CO₃²⁻",
-        "C₂O₄²⁻",
-        "CrO₄²⁻",
-        "Cr₂O₇²⁻",
-        "AsO₃³⁻",
-        "AsO₄⁴⁻",
-        "SbO₃³⁻",
-        "SbO₄⁴⁻",
-        "PO₃³⁻",
-        "PO₄³⁻",
-        "SiO₂³⁻",
-        "BO₃³⁻",
-        "P³⁻",
-        "HCO3⁻",
-        "SnO₂²⁻",
-        "SnO₃²⁻",
-        "[Fe(CN)₆]³⁻",
-        "[Fe(CN)₆]⁴⁻",
-        "CN₂²⁻",
-        "OCN⁻"
-    ],
-    namaA: [
-        "Hidrida",
-        "Fluorida",
-        "Klorida",
-        "Bromida",
-        "lodida",
-        "Hidroksida",
-        "Sianida",
-        "Tiosianat",
-        "Format/Formiat",
-        "Asetat",
-        "Oksida",
-        "Sulfida",
-        "Nitrida",
-        "Nitrit",
-        "Nitrat",
-        "Hipoklorit/",
-        "Klorit/ Br, I",
-        "Klorat/ Br, I",
-        "Perklorat/",
-        "Permanganat",
-        "Manganat",
-        "Sulfit",
-        "Sulfat",
-        "Tiosulfat",
-        "Karbonat",
-        "Oksalat",
-        "Kromat",
-        "Bikromat",
-        "Arsenit",
-        "Arsenat",
-        "Antimonit",
-        "Antimonat",
-        "Fosfit",
-        "Fosfat",
-        "Silikat",
-        "Borat",
-        "Fosfida",
-        "Bikarbonat",
-        "Stanit",
-        "Stanat",
-        "Ferisianida",
-        "Ferosianida",
-        "Siamida",
-        "Sianat"
-    ],
-    ionK: [
-            "H⁺",
-            "NH₄⁺",
-            "Li⁺",
-            "Na⁺",
-            "K+",
-            "Rb⁺",
-            "Ag⁺",
-            "Be²⁺",
-            "Mg²⁺",
-            "Ca²⁺",
-            "Sr²⁻",
-            "Ba²⁺",
-            "Zn²⁺",
-            "Ni²⁺",
-            "Cd²⁺",
-            "Mn²⁺",
-            "Mn⁴⁺",
-            "Al³⁺",
-            "Cr³⁺",
-            "Bi³⁺",
-            "Sn²⁺",
-            "Sn²⁺",
-            "Pb²⁻",
-            "Pb⁴⁺",
-            "Co²⁺",
-            "Co³⁺",
-            "Hg⁺",
-            "Hg²⁺",
-            "Fe²⁺",
-            "Fe³⁺",
-            "Cu⁺",
-            "Cu²⁺",
-            "Au⁺",
-            "Au³⁺",
-            "Pt⁴⁺",
-            "Hg⁺",
-            "Hg²⁺",
-            "Fe²⁺",
-            "Fe³⁺",
-            "Cu⁺",
-            "Cu²⁺",
-            "Au⁺",
-            "Au³⁺",
-            "Pt⁴⁺",
-        ],
-      namaK: [
-            "Hidrogen/Asam",
-            "Amonium",
-            "Litium",
-            "Natrium",
-            "Kalium",
-            "Rubidium",
-            "Perak",
-            "Berelium",
-            "Magnesium",
-            "Kalsium",
-            "Stronsium",
-            "Barium",
-            "Zink/Seng",
-            "Nikel",
-            "Kadmium",
-            "Mangan(11)",
-            "Mangan(IV)",
-            "Aluminium",
-            "Krom",
-            "Bismut",
-            "Timah (II)/ Stano",
-            "Timan(IV)/ Stani",
-            "Timba1(II) / Plumbo",
-            "Timba1(IV) / Plumbi",
-            "Kobal (II)",
-            "Kobal(III)",
-            "Raksa (I) / Merkuro",
-            "Raksa (II) / Merkuri",
-            "Besi (II) / Ferro",
-            "Besi (III) / Ferri",
-            "Tembaga(I) / Cupro",
-            "Tembaga(II) / Cupri",
-            "Emas (I) / Auro",
-            "Emas (III) / Auri",
-            "Platina (IV)",
-            "Raksa (I) / Merkuro",
-            "Raksa (II) / Merkuri",
-            "Besi (II) / Ferro",
-            "Besi (III) / Ferri",
-            "Tembaga(I) / Cupro",
-            "Tembaga(II) / Cupri",
-            "Emas (I) / Auro",
-            "Emas (III) / Auri",
-            "Platina (IV)",
-           
-        ]
-};
-
-    let x = [];
-let y = [];
-let z = [];
-
-for(let i=0;i<2000;i++){
-  x.push(Math.floor((Math.random() * anionkation['ionA'].length) + 1))
-  y.push(Math.floor((Math.random() * 2)))
-  z.push(Math.floor((Math.random() * 2)))
-}
-
-
-let yy = ['ionA','ionK']
-let xx = ['namaA', 'namaK']
-let zz = ['n','i']
-
-function outtest(x,y, z,xx,yy, zz){
-  if(zz[z] == 'n'){
-    document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
-    
-    
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
-    })
-  }
-  else if(zz[z]=='i'){
-    document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
-    
-    
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
-    })
-  }else{
-    document.querySelector('.ion').innerHTML = anionkation[yy[y]][x]
-    
-    
-    document.querySelector('.ion').addEventListener('click', () => {
-      document.querySelector('.ion').innerHTML = anionkation[xx[y]][x]
-    })
-  }
-}
-
-let ganti = 0
-outtest(x[ganti],y[ganti], z[ganti],xx,yy, zz)
-
-
-document.querySelector('.reload').addEventListener('click',()=>{
-  if(ganti == 2000){
-    location.reload()
-  }
-  outtest(x[ganti],y[ganti], z[ganti],xx,yy,zz,z)
-  ganti += 1
-})
-
-
-    
-  </script>
+  <script src="anionkation.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
