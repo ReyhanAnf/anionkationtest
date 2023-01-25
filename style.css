@@ -132,5 +132,9 @@ h1{
 
 #timer{
   text-align: center;
-  font-size: 30px;
+  font-size: 70px;
+  font-weight: 700;
+  color: black;
+  opacity: 0.8;
+  text-shadow: 1px 1px 12px red;
 }
