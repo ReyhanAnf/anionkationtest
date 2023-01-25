@@ -139,8 +139,11 @@ function gastes(){
   
 }
 
+var wak, wak2;
 
 function benartes(){
+  clearTimeout(wak2);
+  clearTimeout(wak);
   nskors += 1;
   document.querySelector('.soloskor').innerHTML = nskors;
   iganti += 1;
@@ -149,6 +152,8 @@ function benartes(){
 }
 
 function salahtes(){
+  clearTimeout(wak2);
+  clearTimeout(wak);
   iganti += 1;
   lanjuttes();
   document.querySelector('.nameit').innerHTML = '';
@@ -164,20 +169,18 @@ function countdown(ig) {
           seconds--;
           counter.innerHTML = seconds;
           if (seconds > 0) {
-            setTimeout(tick, 1000);
+            wak = setTimeout(tick, 1000);
           }else if(seconds == 0){
             if(zz[z[ig]] == 'n'){
               document.querySelector('.nameit').innerHTML = anionkation[xx[y[ig]]][x[ig]]
             }else if(zz[z[ig]] == 'i'){
               document.querySelector('.nameit').innerHTML = anionkation[yy[y[ig]]][x[ig]]
             }
-            setTimeout(tick, 1000);
+            wak = setTimeout(tick, 1000);
             counter.style.display = 'none';
           }else if(seconds == -1){
             cek.style.display = 'flex';
-            setTimeout(tick, 2000);
-          }else if(seconds == -2){
-            salahtes()
+            wak2 = setTimeout(salahtes, 2000);
           }
         }
         tick();
