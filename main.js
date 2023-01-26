@@ -219,7 +219,8 @@ function salahtes(){
 
 
 function countdown(ig) {
-        var seconds = 6;
+        let waktus = document.querySelector('#waktus').value
+        var seconds = waktus;
         function tick() {
           let counter = document.getElementById("timer");
           seconds--;
