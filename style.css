@@ -1,5 +1,7 @@
 body {
     font-size: 15pt;
+    background-color: #0A0A0A;
+    color: #696969;
 }
 .wrap{
   display: flex;
